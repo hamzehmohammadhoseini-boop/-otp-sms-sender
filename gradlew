@@ -1,25 +1,12 @@
 #!/usr/bin/env sh
 
-APP_NAME="Gradle"
-APP_BASE_NAME=`basename "$0"`
+APP_HOME="$(cd "$(dirname "$0")" && pwd)"
 
-DEFAULT_JVM_OPTS=""
+CLASSPATH="$APP_HOME/gradle/wrapper/gradle-wrapper.jar"
 
-MAX_FD="maximum"
+if [ ! -f "$CLASSPATH" ]; then
+  echo "❌ gradle-wrapper.jar not found at $CLASSPATH"
+  exit 1
+fi
 
-warn () {
-    echo "$*"
-}
-
-die () {
-    echo
-    echo "$*"
-    echo
-    exit 1
-}
-
-CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
-
-APP_HOME=$(cd "$(dirname "$0")" && pwd)
-
-exec java $DEFAULT_JVM_OPTS -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
+exec java -classpath "$CLASSPATH" org.gradle.wrapper.GradleWrapperMain "$@"
