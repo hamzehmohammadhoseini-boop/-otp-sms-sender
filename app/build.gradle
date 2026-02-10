@@ -3,17 +3,28 @@ plugins {
 }
 
 android {
+    namespace "com.example.otpreceiver"
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.otp.sender"
+        applicationId "com.example.otpreceiver"
         minSdk 23
         targetSdk 34
         versionCode 1
         versionName "1.0"
     }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 }
 
 dependencies {
 }
-
