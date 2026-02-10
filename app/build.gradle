@@ -1,13 +1,11 @@
-plugins {
-    id 'com.android.application'
-}
+apply plugin: 'com.android.application'
 
 android {
-    namespace "com.example.otpreceiver"
+    namespace "com.example.otpsmssender"
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.otpreceiver"
+        applicationId "com.example.otpsmssender"
         minSdk 23
         targetSdk 34
         versionCode 1
